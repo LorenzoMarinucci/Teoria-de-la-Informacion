@@ -1,5 +1,6 @@
 import sys
 import calculos
+import visualizacion
 from lectura import generar_diccionario
 from simulacion import generar_fuente_simulada
 
@@ -13,23 +14,17 @@ def main():
     fuenteOriginal = generar_diccionario(path)
     fuenteSimulada = generar_fuente_simulada(fuenteOriginal, n)
 
-    print("Distribución de probabilidades en cada fuente\n")
-    print("Símbolo   Fuente original   Fuente simulada")
-    for simbolo in fuenteOriginal:
-        print("{:^7}   {:^15.4f}   {:^16.4f}".format(simbolo, fuenteOriginal[simbolo], fuenteSimulada[simbolo]))
+    visualizacion.mostrar_distribucion(fuenteOriginal,fuenteSimulada)
     
     informacionFuenteSimulada = calculos.cantInformacion(fuenteSimulada)
     informacionFuenteOriginal = calculos.cantInformacion(fuenteOriginal)
-    print("\nInformación otorgada por cada símbolo\n")
-    print("Símbolo   Fuente original   Fuente simulada")
-    for simbolo in fuenteOriginal:
-        print("{:^7}   {:^15.4f}   {:^16.4f}".format(simbolo, informacionFuenteOriginal[simbolo], informacionFuenteSimulada[simbolo]))
+    
+    visualizacion.mostrar_informacion(fuenteOriginal,informacionFuenteOriginal,informacionFuenteSimulada)
 
     entropiaFuenteSimulada = calculos.entropia(cantInformacion = informacionFuenteSimulada, simbolos = fuenteSimulada)
     entropiaFuenteOriginal = calculos.entropia(cantInformacion = informacionFuenteOriginal, simbolos = fuenteOriginal)
-    print("\nEntropia de cada fuente\n")
-    print("Fuente original   Fuente simulada\n")
-    print("{:^15.4f}   {:^16.4f}".format(entropiaFuenteOriginal, entropiaFuenteSimulada))
+    
+    visualizacion.mostrar_entropia(entropiaFuenteOriginal,entropiaFuenteSimulada)
 
 if __name__ == "__main__":
     main()
