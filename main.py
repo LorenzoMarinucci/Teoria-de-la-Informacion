@@ -1,7 +1,7 @@
 import sys
 import calculos
 from lectura import generar_diccionario
-import simulacion
+from simulacion import generar_fuente_simulada
 
 def main():
     if len(sys.argv) < 3:
@@ -9,11 +9,9 @@ def main():
         return
     path = sys.argv[1]
     n = int(sys.argv[2])
-    fuenteOriginal = generar_diccionario(path)
 
-    secuencia = simulacion.simular_secuencia(fuenteOriginal, n)
-    fuenteSimulada = simulacion.generar_fuente(secuencia)
-    simulacion.ajustar_fuente(original = fuenteOriginal, simulada = fuenteSimulada)
+    fuenteOriginal = generar_diccionario(path)
+    fuenteSimulada = generar_fuente_simulada(fuenteOriginal, n)
 
     print("Distribución de probabilidades en cada fuente\n")
     print("Símbolo   Fuente original   Fuente simulada")

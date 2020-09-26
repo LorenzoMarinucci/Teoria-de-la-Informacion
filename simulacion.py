@@ -1,6 +1,16 @@
 from random import random
 
-def simular_secuencia(simbolos, n):
+def generar_fuente_simulada(fuenteOriginal, n):
+    """En base a una distribución de probabilidades, generar una secuencia de
+    longitud N y construir una nueva distribución"""
+
+    fuenteSimulada = {}
+    secuencia = _simular_secuencia(fuenteOriginal, n)
+    fuenteSimulada = _distribucion_secuencia(secuencia)
+    _ajustar_fuente(original = fuenteOriginal, simulada = fuenteSimulada)
+    return fuenteSimulada
+
+def _simular_secuencia(simbolos, n):
     """En base a la longitud n de la secuencia, generar la misma en base
     a las probabilidades de cada símbolo."""
 
@@ -17,7 +27,7 @@ def simular_secuencia(simbolos, n):
     
     return secuencia
 
-def generar_fuente(secuencia):
+def _distribucion_secuencia(secuencia):
     """De acuerdo a una secuencia determinada, retornar un diccionario con la
     distribución de probabilidades de la fuente."""
 
@@ -28,7 +38,7 @@ def generar_fuente(secuencia):
     
     return fuente
 
-def ajustar_fuente(original, simulada):
+def _ajustar_fuente(original, simulada):
     """En caso de que uno de los simbolos de la fuente original no se haya
     generado en la simulada, asignar una probabilidad de 0 a dicho símbolo
     en el diccionario"""
