@@ -1,8 +1,8 @@
 import sys
-import calculos
-import visualizacion
-from lectura import generar_diccionario
-from simulacion import generar_fuente_simulada
+import modulos.calculos as calculos
+import modulos.visualizacion as visualizacion
+from modulos.lectura import generar_diccionario
+from modulos.simulacion import generar_fuente_simulada
 
 def main():
     if len(sys.argv) < 3:
