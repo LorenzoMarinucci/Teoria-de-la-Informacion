@@ -27,3 +27,12 @@ def generar_fuente(secuencia):
         fuente[simbolo] = secuencia.count(simbolo) / len(secuencia) # cada valor del diccionario contiene la probabilidad del símbolo
     
     return fuente
+
+def ajustar_fuente(original, simulada):
+    """En caso de que uno de los simbolos de la fuente original no se haya
+    generado en la simulada, asignar una probabilidad de 0 a dicho símbolo
+    en el diccionario"""
+    
+    for simbolo in original.keys():
+        if simbolo not in simulada.keys():
+            simulada[simbolo] = 0
