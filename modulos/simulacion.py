@@ -1,13 +1,11 @@
 from random import random
 
 def generar_fuente_simulada(fuenteOriginal, n):
-    """En base a una distribución de probabilidades, generar una secuencia de
-    longitud N y construir una nueva distribución"""
+    """Dada una distribución de probabilidades guardada en un diccionario, generar una secuencia de
+    longitud n y construir una nueva distribución"""
 
-    fuenteSimulada = {}
     secuencia = _simular_secuencia(fuenteOriginal, n)
-    fuenteSimulada = _distribucion_secuencia(secuencia)
-    _ajustar_fuente(original = fuenteOriginal, simulada = fuenteSimulada)
+    fuenteSimulada = _generar_distribucion(secuencia, fuenteOriginal.keys())
     return fuenteSimulada
 
 def _simular_secuencia(simbolos, n):
@@ -21,28 +19,19 @@ def _simular_secuencia(simbolos, n):
         numeroAletorio = random()
         for simbolo in simbolos.keys():
             sumaIntervalo += simbolos[simbolo]
-            if (sumaIntervalo >= numeroAletorio): # de darse la condición, el numero aleatorio queda dentro del intervalo del símbolo
+            if sumaIntervalo >= numeroAletorio: # de darse la condición, el numero aleatorio queda dentro del intervalo del símbolo
                 secuencia += simbolo
                 break
     
     return secuencia
 
-def _distribucion_secuencia(secuencia):
-    """De acuerdo a una secuencia determinada, retornar un diccionario con la
-    distribución de probabilidades de la fuente."""
+def _generar_distribucion(secuencia, simbolosOriginales):
+    """De acuerdo a una secuencia determinada y los simbolos originales, retornar un diccionario con la
+    distribución de probabilidades de la secuencia simulada."""
 
-    fuente = dict.fromkeys(secuencia) # genera un diccionario cuyas llaves son los simbolos en la secuencia, sin repetir los mismos
-    
-    for simbolo in fuente:
-        fuente[simbolo] = secuencia.count(simbolo) / len(secuencia) # cada valor del diccionario contiene la probabilidad del símbolo
-    
-    return fuente
+    fuenteSimulada = {}
 
-def _ajustar_fuente(original, simulada):
-    """En caso de que uno de los simbolos de la fuente original no se haya
-    generado en la simulada, asignar una probabilidad de 0 a dicho símbolo
-    en el diccionario"""
-    
-    for simbolo in original.keys():
-        if simbolo not in simulada.keys():
-            simulada[simbolo] = 0
+    for simbolo in simbolosOriginales:
+        fuenteSimulada[simbolo] = secuencia.count(simbolo) / len(secuencia) # cada valor del diccionario contiene la probabilidad del símbolo
+
+    return fuenteSimulada
