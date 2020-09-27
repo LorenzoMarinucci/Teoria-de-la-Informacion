@@ -14,17 +14,17 @@ def main():
     fuenteOriginal = generar_diccionario(path)
     fuenteSimulada = generar_fuente_simulada(fuenteOriginal, n)
 
-    visualizacion.mostrar_distribucion(fuenteOriginal,fuenteSimulada)
+    visualizacion.mostrar_distribucion(fuenteOriginal, fuenteSimulada)
     
     informacionFuenteSimulada = calculos.cantInformacion(fuenteSimulada)
     informacionFuenteOriginal = calculos.cantInformacion(fuenteOriginal)
     
-    visualizacion.mostrar_informacion(fuenteOriginal,informacionFuenteOriginal,informacionFuenteSimulada)
+    visualizacion.mostrar_informacion(informacionFuenteOriginal,informacionFuenteSimulada)
 
     entropiaFuenteSimulada = calculos.entropia(cantInformacion = informacionFuenteSimulada, simbolos = fuenteSimulada)
     entropiaFuenteOriginal = calculos.entropia(cantInformacion = informacionFuenteOriginal, simbolos = fuenteOriginal)
     
-    visualizacion.mostrar_entropia(entropiaFuenteOriginal,entropiaFuenteSimulada)
+    visualizacion.mostrar_entropia(entropiaFuenteOriginal, entropiaFuenteSimulada)
 
 if __name__ == "__main__":
     main()
