@@ -11,7 +11,6 @@ def main():
     matrizDeTransicion, simbolos = leer_matriz(path)
     print("Matriz generada:\n")
     imprimir_matriz(matrizDeTransicion, simbolos)
-    V = calculos.vectorEstacionario(matrizDeTransicion)
 
 if __name__ == "__main__":
     main()
