@@ -1,9 +1,6 @@
-#!.\Scripts\python.exe
-
 from modulos.visualizacion import imprimir_matriz
 import modulos.calculos as calculos
 from modulos.lectura import leer_matriz
-import numpy as np
 import sys
 
 def main():
