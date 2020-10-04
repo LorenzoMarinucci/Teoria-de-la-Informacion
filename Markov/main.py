@@ -1,4 +1,4 @@
-from modulos.visualizacion import imprimir_matriz
+from modulos.visualizacion import imprimir_matriz,imprimir_vector
 import modulos.calculos as calculos
 from modulos.lectura import leer_matriz
 import sys
@@ -11,6 +11,10 @@ def main():
     matrizDeTransicion, simbolos = leer_matriz(path)
     print("Matriz generada:\n")
     imprimir_matriz(matrizDeTransicion, simbolos)
+    vectorEstadoEstacionario = calculos.calculoV(matrizDeTransicion,len(matrizDeTransicion))
+    print("\nEstado estacionario:\n")
+    imprimir_vector(vectorEstadoEstacionario)
+
 
 if __name__ == "__main__":
     main()
