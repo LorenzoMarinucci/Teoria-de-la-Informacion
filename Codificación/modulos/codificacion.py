@@ -35,7 +35,7 @@ def generarCodificacion2(diccionario):
 def generarCodificacionPrincipal(diccionario):
     '''Parametros:Son los simbolos iniciales con sus probabilidades asociadas.
        Salida:Diccionario con los simbolos como clave y la palabra codigo como valor.
-       Funcionamiento:Se selecciona un numero aleatorio y en base a dicho numero se elije un metodo de codificacion u otro con el cual se va a generar la
+       Funcionamiento:Se selecciona un numero aleatorio y en base a dicho numero se elige un metodo de codificacion u otro con el cual se va a generar la
                       salida.
     '''
     valor = random.randint(0, 1)
