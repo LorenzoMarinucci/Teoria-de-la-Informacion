@@ -32,7 +32,7 @@ def generarCodificacion2(diccionario):
         longitud = longitud + 1;
     return codigo;
 
-def generarCodificacionPrincipal(diccionario):
+def generarCodificacion(diccionario):
     '''Parametros:Son los simbolos iniciales con sus probabilidades asociadas.
        Salida:Diccionario con los simbolos como clave y la palabra codigo como valor.
        Funcionamiento:Se selecciona un numero aleatorio y en base a dicho numero se elige un metodo de codificacion u otro con el cual se va a generar la
