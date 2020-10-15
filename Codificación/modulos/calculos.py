@@ -10,4 +10,4 @@ def isCompacto(probabilidadSimbolos,codificacion):
     return longitudMedia(probabilidadSimbolos,codificacion) >= entropia(probabilidadSimbolos)
 
 def cumpleKraft(codificacion):
-    return sum(2 ** -len(c) for c in codificacion)
+    return sum(2 ** -len(c) for c in codificacion) <= 1
