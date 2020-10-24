@@ -1,4 +1,4 @@
-from math import log
+from math import log, ceil
 
 def entropia(probabilidadSimbolos):
     return sum(p ** log(1/p, 2) for p in probabilidadSimbolos)
@@ -6,8 +6,15 @@ def entropia(probabilidadSimbolos):
 def longitudMedia(probabilidadSimbolos,codificacion):
     return sum(p * len(c) for p,c in zip(probabilidadSimbolos,codificacion))
 
-def isCompacto(probabilidadSimbolos,codificacion):
-    return longitudMedia(probabilidadSimbolos,codificacion) >= entropia(probabilidadSimbolos)
+def isCompacto(probabilidadSimbolos, codificacion, r):
+    compacto = True
+    
+    for suceso in codificacion.keys():
+        alfa = ceil(log(probabilidadSimbolos[suceso]) /  log(1/r))
+        if (alfa < len(codificacion[suceso])):
+            compacto = False
+            break
+    return compacto
 
 def cumpleKraft(codificacion):
     return sum(2 ** -len(c) for c in codificacion) <= 1
