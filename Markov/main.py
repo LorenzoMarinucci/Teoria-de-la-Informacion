@@ -1,7 +1,8 @@
+from modulos import calculos
 from modulos.visualizacion import imprimir_matriz, imprimir_vector
-import modulos.calculos as calculos
 from modulos.lectura import leer_matriz
 import sys
+
 
 def main():
     if (len(sys.argv) < 2):
@@ -12,8 +13,9 @@ def main():
     print("Matriz generada:\n")
     imprimir_matriz(matrizDeTransicion, simbolos)
     print("\nEstado estacionario:\n")
-    imprimir_vector(calculos.calculoV(matrizDeTransicion, len(matrizDeTransicion)))
-
+    estadoEstacionario = calculos.calculoV(matrizDeTransicion, len(matrizDeTransicion))
+    imprimir_vector(estadoEstacionario)
+    print(calculos.calculoEntropiaMarkov(estadoEstacionario,matrizDeTransicion))
 
 if __name__ == "__main__":
     main()
