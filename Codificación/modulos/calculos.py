@@ -11,7 +11,7 @@ def isCompacto(probabilidadSimbolos, codificacion, r):
     
     for suceso in codificacion.keys():
         alfa = log(probabilidadSimbolos[suceso]) /  log(1/r)
-        if (alfa >= len(codificacion[suceso]) and ceil(alfa) <= len(codificacion[suceso])) :
+        if (alfa > len(codificacion[suceso]) and ceil(alfa) > len(codificacion[suceso])) :
             compacto = False
             break
     return compacto
