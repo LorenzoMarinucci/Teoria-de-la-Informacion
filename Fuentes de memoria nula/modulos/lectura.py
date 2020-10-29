@@ -1,6 +1,12 @@
 def generar_diccionario(path):
     """Toma como argumento el path a un archivo, lo abre y pasa la distribución de
-    probabilidades a un diccionario, con los símbolos como llaves."""
+    probabilidades a un diccionario, con los símbolos como llaves.
+    
+    Parámetro:
+    
+    path: ruta al archivo que contiene la fuente.
+    
+    Retorna: diccionario con la distribución de probabilidades de la fuente del archivo."""
 
     simbolos = {}
     with open(path, encoding='utf-8') as archivoSimbolos:
