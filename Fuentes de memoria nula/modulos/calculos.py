@@ -22,7 +22,7 @@ def cantInformacion(fuente):
             cantInformacion[simbolo] = 0
     return cantInformacion
 
-def entropia(cantInformacion,probabilidades):
+def entropia(cantInformacion, probabilidades):
     ''' Dada la cantidad de informacion aportada por cada elemento, almacenada en un diccionario, se procede a
         calcular la entropia realizando la sumatoria de cada producto entre la cantidad de informacion y
         probabilidad de ocurrencia de un simbolo determinado.
