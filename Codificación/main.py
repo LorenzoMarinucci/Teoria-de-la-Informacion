@@ -3,6 +3,9 @@ from modulos.lectura  import leerFuente
 from modulos.codificacion import generarCodificacion
 from modulos.calculos import entropia, longitudMedia, isCompacto, cumpleKraft
 
+def SinRutaArchivoException(Exception):
+    pass
+
 def main():
     if len(sys.argv < 2):
        raise SinRutaArchivoException('No ingresó la ruta del archivo') 
