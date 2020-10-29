@@ -21,8 +21,8 @@ def main():
     
     visualizacion.mostrar_informacion(informacionFuenteOriginal,informacionFuenteSimulada)
 
-    entropiaFuenteSimulada = calculos.entropia(cantInformacion = informacionFuenteSimulada, simbolos = fuenteSimulada)
-    entropiaFuenteOriginal = calculos.entropia(cantInformacion = informacionFuenteOriginal, simbolos = fuenteOriginal)
+    entropiaFuenteSimulada = calculos.entropia(cantInformacion = informacionFuenteSimulada, probabilidades = fuenteSimulada)
+    entropiaFuenteOriginal = calculos.entropia(cantInformacion = informacionFuenteOriginal, probabilidades = fuenteOriginal)
     
     visualizacion.mostrar_entropia(entropiaFuenteOriginal, entropiaFuenteSimulada)
 

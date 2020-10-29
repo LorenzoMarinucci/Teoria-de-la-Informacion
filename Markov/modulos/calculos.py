@@ -1,11 +1,5 @@
 import math
 import numpy as np
-from sympy import *
-from sympy.solvers.solveset import linsolve
-from filecmp import cmp
-
-from pip._vendor.distlib.compat import raw_input
-
 
 def calculoEntropiaMarkov(vectorV, matriz):
     tamanio = len(vectorV)
