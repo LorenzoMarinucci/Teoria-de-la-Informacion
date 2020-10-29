@@ -6,5 +6,4 @@ def leerFuente(path):
     with open(path, encoding='utf-8') as archivoFuente:
         # se supone que el archivo viene estructurado por "SIMBOLO PROBABILIDAD" en cada linea
         simbolos = {valores[0]: float(valores[1]) for valores in (linea.split() for linea in archivoFuente)}
-    
     return simbolos

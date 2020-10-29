@@ -1,7 +1,7 @@
 import sys
-from Codificación.modulos.lectura  import leerFuente
-from Codificación.modulos.codificacion import generarCodificacion
-from Codificación.modulos.calculos import entropia, longitudMedia, isCompacto, cumpleKraft
+from modulos.lectura  import leerFuente
+from modulos.codificacion import generarCodificacion
+from modulos.calculos import entropia, longitudMedia, isCompacto, cumpleKraft
 
 def main():
     if len(sys.argv < 2):
@@ -12,7 +12,7 @@ def main():
 
     print('Entropía de la fuente: ', entropia(fuente.values()))
     print('Longitud media: ', longitudMedia(fuente.values(),codificacion))
-    print('El código es compacto: ', isCompacto(fuente.values(),codificacion))
+    print('El código es compacto: ', isCompacto(fuente.values(), codificacion, 2))
     print('Cumple la inecuación de Kraft: ', cumpleKraft(codificacion))
 
 if __name__ == '__main__':
