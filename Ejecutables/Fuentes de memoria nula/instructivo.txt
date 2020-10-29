@@ -1,0 +1,12 @@
+El programa se ejecuta desde la línea de comandos. Se debe incluir la ruta al archivo
+que contenga la fuente y la longitud de la secuencia.
+
+El archivo se debe estructurar de la forma:
+
+Símbolo1 p1
+Símbolo2 p2
+...
+
+Se ejecuta como: memoriaNula.exe [archivo] n
+
+Por ejemplo: memoriaNula.exe f1.txt 5000
