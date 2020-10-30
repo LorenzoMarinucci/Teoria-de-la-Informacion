@@ -55,4 +55,4 @@ def cumpleKraft(codificacion):
 
     Retorna: True si cumple con la inecuación de Kraft, False en caso contrario
     '''
-    return sum(2 ** -len(c) for c in codificacion) <= 1
+    return sum(2 ** -len(c) for c in codificacion.values()) <= 1
