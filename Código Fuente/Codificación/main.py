@@ -2,6 +2,7 @@ import sys
 from modulos.lectura  import leerFuente
 from modulos.codificacion import generarCodificacion
 from modulos.calculos import entropia, longitudMedia, isCompacto, cumpleKraft
+from modulos.visualizacion import muestraCodificacion
 
 class SinRutaArchivoException(Exception):
     pass
@@ -13,9 +14,10 @@ def main():
     fuente = leerFuente(path)
     codificacion = generarCodificacion(fuente)
 
-    print('Entropía de la fuente: ', entropia(fuente.values()))
-    print('Longitud media: ', longitudMedia(fuente.values(),codificacion))
-    print('El código es compacto: ', isCompacto(fuente.values(), codificacion, 2))
+    muestraCodificacion(codificacion)
+    print('\nEntropía de la fuente: ', entropia(fuente.values()))
+    print('Longitud media: ', longitudMedia(fuente,codificacion))
+    print('El código es compacto: ', isCompacto(fuente,codificacion, 2))
     print('Cumple la inecuación de Kraft: ', cumpleKraft(codificacion))
 
 if __name__ == '__main__':

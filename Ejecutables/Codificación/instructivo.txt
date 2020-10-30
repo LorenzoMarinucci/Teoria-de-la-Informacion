@@ -1,0 +1,12 @@
+El programa se ejecuta desde la línea de comandos. Se debe incluir la ruta al archivo
+que contenga la distribución de probabilidades de la fuente
+
+El archivo se debe estructurar de la forma:
+
+Simbolo 1 Probabilidad 1
+Simbolo 2 Probabilidad 2
+...
+
+Se ejecuta como: codificacion.exe [archivo]
+
+Por ejemplo: codificacion.exe f1.txt

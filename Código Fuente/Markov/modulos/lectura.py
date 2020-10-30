@@ -10,19 +10,16 @@ def leer_matriz(path):
 
     Retorna: una lista que representa a la matriz y una lista con los símbolos de la fuente
     """
-
     matriz = []
 
     with open(path, encoding = 'utf-8') as archivoMatriz:
         linea = archivoMatriz.readline()
-        linea = linea.strip() # borra espacios en blanco antes del primer símbolo y después del último
-        linea = re.sub('\s+', ' ', linea) # reemplaza cualquier cantidad de espacios en blanco por sólo uno
-        simbolos = linea.split(" ") # genera lista de simbolos
-        for linea in archivoMatriz: # se recorren las líneas restantes
+        linea = linea.strip()
+        linea = re.sub('\s+', ' ', linea)
+        simbolos = linea.split(" ")
+        for linea in archivoMatriz:
             linea = linea.strip()
             linea = re.sub('\s+', ' ', linea)
-            # genera una lista con cada valor presente en la línea, luego inserta la lista (fila) en la última posición de la matriz
             matriz.append([float(valor) for valor in linea.split(" ")]) 
-        
 
     return (matriz, simbolos)

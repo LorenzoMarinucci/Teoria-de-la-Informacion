@@ -1,10 +1,15 @@
 import random
 
 def generarCodificacion1(diccionario):
-    '''Parametros:Diccionario:Son los simbolos iniciales con sus probabilidades asociadas.
-       Salida:Diccionario con los simbolos como clave y la palabra codigo como valor.
-       Funcionamiento:En base a la cantidad de simbolos se calcula la cantidad de bits necesarios para generar las palabras codigos, posteriormente
-                      se recorre el diccionario y a cada clave se le asigna una palabra codigo.
+    '''
+    En base a la cantidad de simbolos se calcula la cantidad de bits necesarios para generar las palabras codigo,
+    posteriormente se recorre el diccionario y a cada clave se le asigna una palabra codigo.
+
+    Parametros:
+
+    diccionario: son los simbolos iniciales con sus probabilidades asociadas.
+
+    Retorna: diccionario con los simbolos como clave y la palabra codigo como valor.
     '''
     j = 0
     claves = diccionario.keys()
@@ -16,11 +21,17 @@ def generarCodificacion1(diccionario):
     return codigo
 
 def generarCodificacion2(diccionario):
-    '''Parametros:Diccionario:Son los simbolos iniciales con sus probabilidades asociadas.
-       Salida:Diccionario con los simbolos como clave y la palabra codigo como valor.
-       Funcionamiento:Se crea una copia del diccionario y posteriormente se procede a buscar la probabilidad m�s alta, luego de ello se ubica el 
-                      s�mbolo al que pertenece la misma y se le asocia una palabra c�digo, luego de realizar lo antes mencionado se elimina la 
-                      clave-valor del diccionario y se repite el procedimiento una y otra vez hasta que no quedan m�s clave-valor en el diccionario.
+    '''
+    Se crea una copia del diccionario y posteriormente se procede a buscar la probabilidad mas alta, luego de ello se
+    ubica el simbolo al que pertenece la misma y se le asocia una palabra codigo, luego de realizar lo antes mencionado
+    se elimina la clave-valor del diccionario y se repite el procedimiento una y otra vez hasta que no quedan mas
+    elementos.
+
+    Parametros:
+
+    diccionario: son los simbolos iniciales con sus probabilidades asociadas.
+
+    Retorna: diccionario con los simbolos como clave y la palabra codigo como valor.
     '''
     inicial = "1"
     longitud = 1
@@ -35,10 +46,15 @@ def generarCodificacion2(diccionario):
     return codigo
 
 def generarCodificacion(diccionario):
-    '''Parametros:Son los simbolos iniciales con sus probabilidades asociadas.
-       Salida:Diccionario con los simbolos como clave y la palabra codigo como valor.
-       Funcionamiento:Se selecciona un numero aleatorio y en base a dicho numero se elige un metodo de codificacion u otro con el cual se va a generar la
-                      salida.
+    '''
+    Se selecciona un numero aleatorio y en base a dicho numero se elige un metodo de codificacion u otro con el cual se
+    va a generar la salida.
+
+    Parametros:
+
+    diccionario: son los simbolos iniciales con sus probabilidades asociadas.
+
+    Retorna: diccionario con los simbolos como clave y la palabra codigo como valor.
     '''
     valor = random.randint(0, 1)
     if valor == 0:

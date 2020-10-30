@@ -9,6 +9,6 @@ Probabilidad 21 Probabilidad 22 ... Probabilidad 2n
 ...
 Probabilidad n1 Probabilidad n2 ... Probabilidad nn
 
-Se ejecuta como: Markov.exe [archivo]
+Se ejecuta como: markov.exe [archivo]
 
-Por ejemplo: Markov.exe mat1.txt
+Por ejemplo: markov.exe mat1.txt

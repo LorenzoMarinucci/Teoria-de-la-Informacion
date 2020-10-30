@@ -33,7 +33,7 @@ def _simular_secuencia(simbolos, n):
         numeroAletorio = random()
         for simbolo in simbolos.keys():
             sumaIntervalo += simbolos[simbolo]
-            if sumaIntervalo >= numeroAletorio: # de darse la condición, el numero aleatorio queda dentro del intervalo del símbolo
+            if sumaIntervalo >= numeroAletorio:
                 secuencia += simbolo
                 break
     
@@ -53,6 +53,5 @@ def _generar_distribucion(secuencia, simbolosOriginales):
     fuenteSimulada = {}
 
     for simbolo in simbolosOriginales:
-        fuenteSimulada[simbolo] = secuencia.count(simbolo) / len(secuencia) # cada valor del diccionario contiene la probabilidad del símbolo
-
+        fuenteSimulada[simbolo] = secuencia.count(simbolo) / len(secuencia)
     return fuenteSimulada
