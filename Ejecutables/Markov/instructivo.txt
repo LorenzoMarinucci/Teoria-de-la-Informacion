@@ -1,0 +1,14 @@
+El programa se ejecuta desde la línea de comandos. Se debe incluir la ruta al archivo
+que contenga la matriz de transición
+
+El archivo se debe estructurar de la forma:
+
+Simbolo 1 Simbolo 2 ... Simbolo n
+Probabilidad 11 Probabilidad 12 ... Probabilidad 1n
+Probabilidad 21 Probabilidad 22 ... Probabilidad 2n
+...
+Probabilidad n1 Probabilidad n2 ... Probabilidad nn
+
+Se ejecuta como: Markov.exe [archivo]
+
+Por ejemplo: Markov.exe mat1.txt
