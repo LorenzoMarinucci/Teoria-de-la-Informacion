@@ -54,7 +54,7 @@ public class Huffman extends ComprimirYDescomprimir{
 	}
 
     private Character getClaveMinimo(HashMap<Character,Float> probabilidades) {
-    	Float minimaProb = 1;
+    	Float minimaProb = (float) 1,probabilidad;
 		Character minimoChar = null;
 		Set<Character> claves = probabilidades.keySet();
 		for(Character clave:claves) {

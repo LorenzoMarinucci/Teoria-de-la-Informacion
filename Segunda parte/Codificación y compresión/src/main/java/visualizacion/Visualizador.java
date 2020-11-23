@@ -1,4 +1,4 @@
-package visualización;
+package visualizacion;
 
 public class Visualizador {
 }
