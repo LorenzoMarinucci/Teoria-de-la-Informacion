@@ -6,12 +6,14 @@ import compresor.ComprimirYDescomprimir;
 import compresor.Huffman;
 import compresor.RLC;
 import compresor.Shanon_Fano;
+import visualizacion.Visualizador;
 
 public class Main {
 
     public static void main(String[] args) {
     	
     	System.out.println(RLC.comprimir("AABB CDD"));
+    	System.out.println(RLC.descomprimir("  4 A 3   10 B 2 C 100   5"));
     	
     	Huffman h = new Huffman();
     	Shanon_Fano sf = new Shanon_Fano();
@@ -26,6 +28,8 @@ public class Main {
     	//System.out.println(sf.generarAlfabetoCodigo(prob));
     	System.out.println(ComprimirYDescomprimir.comprimir("hola",h.generarAlfabetoCodigo(prob)));
     	System.out.println(ComprimirYDescomprimir.comprimir("hola",sf.generarAlfabetoCodigo(prob)));
+    	
+    	Visualizador.muestraAlfabeto(h.generarAlfabetoCodigo(prob));
 
     }
 
