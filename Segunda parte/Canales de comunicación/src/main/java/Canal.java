@@ -1,61 +1,78 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Random;
-
 public class Canal {
 
-    public ArrayList<Simbolo> probabilidadesAPriori;
-    public double[][] matrizDelCanal;
+	private double[][] matCanal;
+	private double[] probEntrada;
+	private double[] probSalida;
+	private double[][] matPPost;
+	
+	public Canal(double[][] matP, double[] probA) {
+		this.matCanal = matP;
+		this.probEntrada = probA;
+		this.probSalida = this.calculaProbB();
+		this.matPPost = this.calculaMatPPost();
+	}
+	
+	//Correcto.
+	private double[][] calculaMatPPost() {
+		int filas = this.matCanal[0].length;
+		int columnas = this.matCanal.length;
+		int i,j;
+		double[][] matPAB = new double[filas][columnas];
+		for(i = 0 ; i < filas ; i++) 
+			for(j = 0; j < columnas ; j++)
+				matPAB[i][j] = (this.matCanal[j][i]*this.probEntrada[j])/this.probSalida[i];
+		return matPAB;
+	}
 
-    public Canal(ArrayList<Simbolo> probabilidadesAPriori, double[][] matrizDelCanal) {
-        this.probabilidadesAPriori = probabilidadesAPriori;
-        this.matrizDelCanal = matrizDelCanal;
-    }
+	//Correcto.
+	private double[] calculaProbB() {
+		int columnas = this.matCanal[0].length;
+		double[] probB = new double[columnas];
+		int i,j;
+		for(i = 0; i < columnas ; i++) 
+			for(j = 0; j < this.matCanal.length; j++) 
+				probB[i] += this.probEntrada[j]*this.matCanal[j][i];
+		return probB;
+	}
 
-    public String envio_y_recepcion(int cantidadSimbolos) {
-
-        ArrayList<String> mensajeEnviado = enviar_mensaje(cantidadSimbolos);
-        return recibir_mensaje(mensajeEnviado);
-
-
-        while (it.hasNext()) {
-
-            Double numeroAleatorio = r.nextDouble();
-            Double sumatoria = 0.;
-
-
-        }
-
-    }
-
-    private ArrayList<String> recibir_mensaje(ArrayList<String> mensajeEnviado) {
-
-        ArrayList<String> mensajeRecibido = new ArrayList<String>();
-
-    }
-
-    private ArrayList<String> enviar_mensaje(int cantidadSimbolos) {
-
-        ArrayList<String> mensaje;
-        Random r = new Random();
-
-        for (int i = 1; i <= cantidadSimbolos; i++) {
-
-            Double numeroAleatorio = r.nextDouble();
-            Double sumatoria = 0.;
-            Iterator<Simbolo> it = probabilidadesAPriori.iterator();
-            Simbolo actual;
-
-            while (it.hasNext() && sumatoria < numeroAleatorio) {
-                actual = it.next();
-                sumatoria += actual.probabilidad;
-            }
-
-            mensaje.add(actual.simbolo);
-        }
-
-        return mensaje;
-    }
+	//Correcto.
+	public double calculoEquivocacion(double[] entropiaPost) {
+		double entropia = 0.;
+		int i;
+		for(i = 0 ; i < entropiaPost.length ; i++) 
+			entropia += this.probSalida[i]*entropiaPost[i];
+		return entropia;
+	}
+	
+	public double calculoInformacionMutua(double equivocacion) {
+		return this.calculoEntropiaAPriori() - equivocacion;
+	}
+	
+	//Correcto.
+	public double calculoEntropiaAPriori() {
+		double suma = 0,probabilidad;
+		int i,elementos = this.probEntrada.length;
+		for(i = 0; i < elementos; i++) {
+			probabilidad = this.probEntrada[i];
+			suma += probabilidad *-1*(Math.log(probabilidad) / Math.log(2));
+		}
+		return suma;
+	}
+	
+	//Correcto.
+	public double[] calculoEntropiaAPosteriori() {
+		int fila = this.matPPost.length;
+		int columna = this.matPPost[0].length;
+		double[] entropias = new double[fila];
+		int i,j;
+		double probabilidad = 0;
+		for(i = 0 ; i < fila ; i++) {
+			for(j = 0 ; j < columna ; j++) {
+				probabilidad = this.matPPost[i][j];
+				if(probabilidad != 0)
+					entropias[i] += probabilidad*-1*(Math.log(probabilidad)/Math.log(2));
+			}
+		}
+		return entropias;
+	}
 }
