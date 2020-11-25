@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Huffman extends ComprimirYDescomprimir{
 
-    public HashMap<Character,String> generarAlfabetoCodigo(HashMap<Character,Float> probabilidades){
+    public static HashMap<Character,String> generarAlfabetoCodigo(HashMap<Character,Float> probabilidades){
 		if(probabilidades.size() == 2) {
 	    	Float minimaProb = (float) 2;
 	    	Float maximaProb = (float) -1;
@@ -53,7 +53,7 @@ public class Huffman extends ComprimirYDescomprimir{
 	    }
 	}
 
-    private Character getClaveMinimo(HashMap<Character,Float> probabilidades) {
+    private static Character getClaveMinimo(HashMap<Character,Float> probabilidades) {
     	Float minimaProb = (float) 1,probabilidad;
 		Character minimoChar = null;
 		Set<Character> claves = probabilidades.keySet();

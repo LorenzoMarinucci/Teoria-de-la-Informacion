@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Lector {
 
-    public String leerArchivo(String path){
+    public static String leerArchivo(String path){
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
             StringBuilder sb = new StringBuilder();
@@ -27,7 +27,7 @@ public class Lector {
         return null;
     }
 
-    public HashMap<Character,Float> generarDistribucion(String mensaje){
+    public static HashMap<Character,Float> generarDistribucion(String mensaje){
         HashMap<Character,Float> distribucion = new HashMap<Character, Float>();
         int N = 0;
         char[] caracteres = mensaje.toCharArray();
@@ -35,7 +35,7 @@ public class Lector {
             if (distribucion.containsKey(caracter))
                 distribucion.put(caracter, (float) (distribucion.get(caracter) + 1.));
             else
-                distribucion.put(caracter, (float) (distribucion.get(caracter) + 1.));
+                distribucion.put(caracter, (float) 1.);
             N += 1;
         }
         for (char caracter: distribucion.keySet()){

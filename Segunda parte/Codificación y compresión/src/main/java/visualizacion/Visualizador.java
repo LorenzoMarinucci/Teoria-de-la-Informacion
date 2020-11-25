@@ -7,16 +7,34 @@ import java.util.Set;
 
 public class Visualizador {
 	
-	public static void muestraAlfabeto(HashMap<Character,String> alfabeto) {
+	public static void muestraProbabilidades(HashMap<Character,Float> hashMap) {
 		int i = 0,j;
-		Object[] simbolos = alfabeto.keySet().toArray();
+		Object[] simbolos = hashMap.keySet().toArray();
 		while (i<simbolos.length) {
 			j = 0;
 			while (j<6 && i<simbolos.length) {
-				System.out.print(simbolos[i] + ": " + alfabeto.get(simbolos[i]) + "   ");
+				String formateado = String.format("%.4f",hashMap.get(simbolos[i]));
+				System.out.print(simbolos[i] + ": " + formateado + "   ");
 				j++;
 				i++;
 			}
+			System.out.println();
 		}
 	}
+	
+	public static void muestraAlfabeto(HashMap<Character,String> hashMap) {
+		int i = 0,j;
+		Object[] simbolos = hashMap.keySet().toArray();
+		while (i<simbolos.length) {
+			j = 0;
+			while (j<6 && i<simbolos.length) {
+				String formateado = String.format("%-15s",hashMap.get(simbolos[i]));
+				System.out.print(simbolos[i] + ": " + formateado);
+				j++;
+				i++;
+			}
+			System.out.println();
+		}
+	}
+	
 }

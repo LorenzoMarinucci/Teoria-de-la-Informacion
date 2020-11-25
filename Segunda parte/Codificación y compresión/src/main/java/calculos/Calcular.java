@@ -5,9 +5,9 @@ import java.util.HashMap;
 
 public class Calcular {
 
-    public static float entropia(ArrayList<Float> probabilidades){
+    public static float entropia(HashMap<Character,Float> probabilidades){
         float e = 0;
-        for(float p: probabilidades){
+        for(float p: probabilidades.values()){
             e += p*Math.log(1./p)/Math.log(2);
         }
         return e;
@@ -29,9 +29,9 @@ public class Calcular {
         return ((longitudMedia-entropia)/longitudMedia);
     }
 
-    public static String tasa_compresion(String mensajeOriginal, String mensajeComprimido){ //preguntar
-        int N = (int) Math.floor(bytesString(mensajeOriginal) / Math.ceil(mensajeComprimido.length()/8));
-        return N + ":1";
+    public static String tasa_compresion(String mensajeOriginal, String mensajeComprimido){
+        Float N = (float) ((float) bytesString(mensajeOriginal) / Math.ceil(mensajeComprimido.length()/8.));
+        return String.format("%.2f",N) + ":1";
     }
 
     public static int bytesString(String mensaje){
