@@ -22,7 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70a02739-841f-4c6f-971b-bbc72b0235f2" name="Default Changelist" comment="" />
+    <list default="true" id="70a02739-841f-4c6f-971b-bbc72b0235f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/calculos/Calcular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/calculos/Calcular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/compresor/Huffman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/compresor/Huffman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/compresor/RLC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/compresor/RLC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lectura/Lector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lectura/Lector.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +52,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.2.2\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.2\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -59,6 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -112,21 +121,25 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1605649540854" />
-    <state width="1556" height="218" key="GridCell.Tab.0.bottom" timestamp="1605652283017">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="343" key="GridCell.Tab.0.bottom" timestamp="1606388597942">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="343" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1606388597942" />
     <state width="1556" height="218" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1605652283017" />
-    <state width="1556" height="218" key="GridCell.Tab.0.center" timestamp="1605652283016">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="343" key="GridCell.Tab.0.center" timestamp="1606388597942">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="343" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1606388597942" />
     <state width="1556" height="218" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1605652283016" />
-    <state width="1556" height="218" key="GridCell.Tab.0.left" timestamp="1605652283016">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="343" key="GridCell.Tab.0.left" timestamp="1606388597941">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="343" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1606388597941" />
     <state width="1556" height="218" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1605652283016" />
-    <state width="1556" height="218" key="GridCell.Tab.0.right" timestamp="1605652283017">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="343" key="GridCell.Tab.0.right" timestamp="1606388597942">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state width="1323" height="343" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1606388597942" />
     <state width="1556" height="218" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1605652283017" />
   </component>
 </project>

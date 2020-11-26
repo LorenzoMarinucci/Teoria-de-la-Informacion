@@ -34,6 +34,28 @@ public class Calcular {
         return String.format("%.2f",N) + ":1";
     }
 
+    public static String tasa_compresionRLC(String mensajeOriginal, String mensajeComprimido){
+        Float N = ( (float) bytesString(mensajeOriginal)) / bytesRLC(mensajeComprimido);
+        return String.format("%.2f",N) + ":1";
+    }
+
+    private static int bytesRLC(String mensajeComprimido){
+        String aux = mensajeComprimido;
+        Character simbolo;
+        Integer cantidad, bytes = 0;
+        while (!aux.isEmpty()) {
+            simbolo = aux.charAt(0);
+            aux = aux.substring(2);
+            cantidad = Integer.parseInt(aux.split(" ")[0]);
+            aux = aux.substring(cantidad.toString().length());
+            bytes += simbolo.toString().getBytes().length;
+            bytes += Integer.BYTES;
+            if (!aux.isEmpty())
+                aux = aux.substring(1);
+        }
+        return bytes;
+    }
+
     public static int bytesString(String mensaje){
         char[] caracteres = mensaje.toCharArray();
         int n = 0;
