@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import calculos.Calcular;
-import compresor.ComprimirYDescomprimir;
+import compresor.Compresor;
 import compresor.Huffman;
 import compresor.RLC;
 import compresor.Shannon_Fano;

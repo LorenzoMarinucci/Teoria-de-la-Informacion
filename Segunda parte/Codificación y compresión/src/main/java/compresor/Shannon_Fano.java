@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Shannon_Fano extends ComprimirYDescomprimir{
+public class Shannon_Fano extends Compresor{
 	
 	/* 
 	 * El metodo genera el alfabeto codigo utilizando el algoritmo de Shannon-Fano de manera recursiva.

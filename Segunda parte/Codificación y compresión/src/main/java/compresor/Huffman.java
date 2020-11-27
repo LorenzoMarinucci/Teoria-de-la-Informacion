@@ -3,7 +3,7 @@ package compresor;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Huffman extends ComprimirYDescomprimir{
+public class Huffman extends Compresor{
 
     public static HashMap<Character,String> generarAlfabetoCodigo(HashMap<Character,Float> probabilidades){
 		if(probabilidades.size() == 2) {
