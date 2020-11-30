@@ -20,24 +20,4 @@ public class RLC {
         return sb.toString();
     }
 
-    public static String descomprimir(String mensaje) {
-        StringBuilder sb = new StringBuilder();
-        String aux = mensaje;
-        Character simbolo;
-        Integer cantidad,i;
-        while (!aux.isEmpty()) {
-        	simbolo = aux.charAt(0);
-        	aux = aux.substring(2);
-        	System.out.println(aux);
-        	cantidad = Integer.parseInt(aux.split(" ")[0]);
-        	for (i=1;i<=cantidad;i++) {
-        		sb.append(simbolo);
-        	}
-        	aux = aux.substring(cantidad.toString().length());
-        	if (!aux.isEmpty())
-        		aux = aux.substring(1);
-        }
-        return sb.toString();
-    }
-    
 }
