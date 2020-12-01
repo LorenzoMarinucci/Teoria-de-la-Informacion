@@ -15,13 +15,13 @@ public class Canal {
     }
 
     private double[][] calculaMatPPost() {
-        int filas = this.matCanal[0].length;
-        int columnas = this.matCanal.length;
+        int columnas = this.matCanal[0].length;
+        int filas = this.matCanal.length;
         int i, j;
         double[][] matPaPost = new double[filas][columnas];
         for (i = 0; i < filas; i++)
             for (j = 0; j < columnas; j++)
-                matPaPost[i][j] = (this.matCanal[j][i] * this.probEntrada[j]) / this.probSalida[i];
+                matPaPost[i][j] = (this.matCanal[i][j] * this.probEntrada[i]) / this.probSalida[j];
         return matPaPost;
     }
 
@@ -100,14 +100,14 @@ public class Canal {
     public double[] calculoEntropiaAPosteriori() {
         int fila = this.matPPost.length;
         int columna = this.matPPost[0].length;
-        double[] entropias = new double[fila];
+        double[] entropias = new double[columna];
         int i, j;
         double probabilidad = 0;
         for (i = 0; i < fila; i++) {
             for (j = 0; j < columna; j++) {
                 probabilidad = this.matPPost[i][j];
                 if (probabilidad != 0)
-                    entropias[i] += probabilidad * -1 * (Math.log(probabilidad) / Math.log(2));
+                    entropias[j] += probabilidad * -1 * (Math.log(probabilidad) / Math.log(2));
             }
         }
         return entropias;
