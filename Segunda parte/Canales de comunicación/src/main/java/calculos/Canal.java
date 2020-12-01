@@ -14,30 +14,28 @@ public class Canal {
         this.matPPost = this.calculaMatPPost();
     }
 
-    // Correcto.
     private double[][] calculaMatPPost() {
         int filas = this.matCanal[0].length;
         int columnas = this.matCanal.length;
         int i, j;
-        double[][] matPAB = new double[filas][columnas];
+        double[][] matPaPost = new double[filas][columnas];
         for (i = 0; i < filas; i++)
             for (j = 0; j < columnas; j++)
-                matPAB[i][j] = (this.matCanal[j][i] * this.probEntrada[j]) / this.probSalida[i];
-        return matPAB;
+                matPaPost[i][j] = (this.matCanal[j][i] * this.probEntrada[j]) / this.probSalida[i];
+        return matPaPost;
     }
 
-    // Correcto.
     private double[] calculaProbB() {
         int columnas = this.matCanal[0].length;
+        int filas = this.matCanal.length;
         double[] probB = new double[columnas];
         int i, j;
         for (i = 0; i < columnas; i++)
-            for (j = 0; j < this.matCanal.length; j++)
+            for (j = 0; j < filas; j++)
                 probB[i] += this.probEntrada[j] * this.matCanal[j][i];
         return probB;
     }
 
-    // Correcto.
     public double calculoEquivocacion(double[] entropiaPost) {
         double entropia = 0.;
         int i;
@@ -89,7 +87,6 @@ public class Canal {
         return suma;
     }
 
-    // Correcto.
     public double calculoEntropiaAPriori() {
         double suma = 0, probabilidad;
         int i, elementos = this.probEntrada.length;
@@ -100,7 +97,6 @@ public class Canal {
         return suma;
     }
 
-    // Correcto.
     public double[] calculoEntropiaAPosteriori() {
         int fila = this.matPPost.length;
         int columna = this.matPPost[0].length;
