@@ -36,7 +36,7 @@ public class Calcular {
 
     public static String tasa_compresionRLC(String mensajeOriginal, String mensajeComprimido){
         Float N = ( (float) bytesString(mensajeOriginal)) / bytesRLC(mensajeComprimido);
-        return String.format("%.2f",N) + ":1";
+        return String.format("%.3f",N) + ":1";
     }
 
     private static int bytesRLC(String mensajeComprimido){
