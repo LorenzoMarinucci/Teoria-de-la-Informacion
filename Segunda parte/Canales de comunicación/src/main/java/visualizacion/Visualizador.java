@@ -30,5 +30,16 @@ public class Visualizador {
             System.out.print(formateado + "   ");
         }
     }
+    
+    public static void mostrarEntropiasAPosteriori(double[] entropias) {
+    	for (int i = 0; i < entropias.length; i++) {
+            System.out.print("  B" + (i + 1) + "     ");
+        }
+    	System.out.println("");
+    	for (int i = 0; i < entropias.length; i++) {
+            String formateado = String.format("%.4f", entropias[i]);
+            System.out.print(formateado + "   ");
+        }
+    }
 
 }

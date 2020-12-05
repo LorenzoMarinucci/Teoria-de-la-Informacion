@@ -113,19 +113,6 @@ public class Canal {
         return entropias;
     }
 
-    public double entropiaAfin() {
-        double entropia = 0.;
-
-        for (int i = 0; i < matCanal.length; i++)
-            for (int j = 0; j < matCanal[i].length; j++) {
-                double sucesoSimultaneo = probEntrada[i] * matCanal[i][j];
-                if (sucesoSimultaneo != 0.)
-                    entropia += sucesoSimultaneo * Math.log(1 / sucesoSimultaneo) / Math.log(2);
-            }
-
-        return entropia;
-    }
-
     public double[] getProbSalida() {
         return probSalida;
     }

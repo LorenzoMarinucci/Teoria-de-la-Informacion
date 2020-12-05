@@ -14,6 +14,7 @@ public class Main {
         Canal c2 = Lectura.leerDatos("canal2.txt");
         Canal c3 = Lectura.leerDatos("canal3.txt");
         Double equivocacion, entropiaBA, entropiaA, entropiaB, informacionMutuaAB;
+        double[] entropias;
 
         System.out.println("-----------CANAL 1-----------\n");
 
@@ -21,8 +22,11 @@ public class Main {
         Visualizador.mostrarPSalida(c1.getProbSalida());
         System.out.println("\n\nProbabilidades a posteriori:\n");
         Visualizador.mostrarMatriz(c1.getMatPPost());
-        equivocacion = c1.calculoEquivocacion(c1.calculoEntropiaAPosteriori());
-        System.out.println("\nEquivocacion = " + equivocacion);
+        entropias = c1.calculoEntropiaAPosteriori();
+        System.out.println("\nEntropias a posteriori:\n");
+        Visualizador.mostrarEntropiasAPosteriori(entropias);
+        equivocacion = c1.calculoEquivocacion(entropias);
+        System.out.println("\n\nEquivocacion = " + equivocacion);
         entropiaA = c1.calculoEntropiaAPriori();
         entropiaB = c1.calculoEntropiaSalida();
         System.out.println("H(A) = " + entropiaA);
@@ -33,8 +37,6 @@ public class Main {
         informacionMutuaAB = c1.calculoInformacionMutuaAB(equivocacion);
         System.out.println("I(A, B) = H(A) - H(A/B) = " + informacionMutuaAB);
         System.out.println("I(B, A) = H(B) - H(B/A) = " + c1.calculoInformacionMutuaBA(entropiaBA));
-        System.out.println("\nEntropía afín (sucesos simultáneos) = " + c1.entropiaAfin());
-        System.out.println("H(A, B) = H(A) + H(B) - I(A, B) = " + (entropiaA + entropiaB - informacionMutuaAB));
 
         System.out.println("\n-----------CANAL 2-----------\n");
 
@@ -42,8 +44,11 @@ public class Main {
         Visualizador.mostrarPSalida(c2.getProbSalida());
         System.out.println("\n\nProbabilidades a posteriori:\n");
         Visualizador.mostrarMatriz(c2.getMatPPost());
-        equivocacion = c2.calculoEquivocacion(c2.calculoEntropiaAPosteriori());
-        System.out.println("\nEquivocacion = " + equivocacion);
+        entropias = c2.calculoEntropiaAPosteriori();
+        System.out.println("\nEntropias a posteriori:\n");
+        Visualizador.mostrarEntropiasAPosteriori(entropias);
+        equivocacion = c2.calculoEquivocacion(entropias);
+        System.out.println("\n\nEquivocacion = " + equivocacion);
         entropiaA = c2.calculoEntropiaAPriori();
         entropiaB = c2.calculoEntropiaSalida();
         System.out.println("H(A) = " + entropiaA);
@@ -54,8 +59,6 @@ public class Main {
         informacionMutuaAB = c2.calculoInformacionMutuaAB(equivocacion);
         System.out.println("I(A, B) = H(A) - H(A/B) = " + informacionMutuaAB);
         System.out.println("I(B, A) = H(B) - H(B/A) = " + c2.calculoInformacionMutuaBA(entropiaBA));
-        System.out.println("\nEntropía afín (sucesos simultáneos) = " + c2.entropiaAfin());
-        System.out.println("H(A, B) = H(A) + H(B) - I(A, B) = " + (entropiaA + entropiaB - informacionMutuaAB));
 
         System.out.println("\n-----------CANAL 3-----------\n");
 
@@ -63,8 +66,11 @@ public class Main {
         Visualizador.mostrarPSalida(c3.getProbSalida());
         System.out.println("\n\nProbabilidades a posteriori:\n");
         Visualizador.mostrarMatriz(c3.getMatPPost());
-        equivocacion = c3.calculoEquivocacion(c3.calculoEntropiaAPosteriori());
-        System.out.println("\nEquivocacion = " + equivocacion);
+        entropias = c3.calculoEntropiaAPosteriori();
+        System.out.println("\nEntropias a posteriori:\n");
+        Visualizador.mostrarEntropiasAPosteriori(entropias);
+        equivocacion = c3.calculoEquivocacion(entropias);
+        System.out.println("\n\nEquivocacion = " + equivocacion);
         entropiaA = c3.calculoEntropiaAPriori();
         entropiaB = c3.calculoEntropiaSalida();
         System.out.println("H(A) = " + entropiaA);
@@ -75,8 +81,6 @@ public class Main {
         informacionMutuaAB = c3.calculoInformacionMutuaAB(equivocacion);
         System.out.println("I(A, B) = H(A) - H(A/B) = " + informacionMutuaAB);
         System.out.println("I(B, A) = H(B) - H(B/A) = " + c3.calculoInformacionMutuaBA(entropiaBA));
-        System.out.println("\nEntropía afín (sucesos simultáneos) = " + c3.entropiaAfin());
-        System.out.println("H(A, B) = H(A) + H(B) - I(A, B) = " + (entropiaA + entropiaB - informacionMutuaAB));
     }
 
 }
