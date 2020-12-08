@@ -7,6 +7,12 @@ public class Canal {
     private double[] probSalida;
     private double[][] matPPost;
 
+    /**
+     * Constructor de la clase. Guarda los valores para la matriz de canal y las probabilidades de las entradas, así como también
+     * las probabilidades de las salidas y la matriz de probabilidades a posteriori
+     * @param matP: matriz de canal
+     * @param probA: probabilidades de entrada
+     */
     public Canal(double[][] matP, double[] probA) {
         this.matCanal = matP;
         this.probEntrada = probA;
@@ -14,6 +20,10 @@ public class Canal {
         this.matPPost = this.calculaMatPPost();
     }
 
+    /**
+     * Método que calcula la matriz de probabilidades a posteriori
+     * @return matriz de probabilidades a posteriori
+     */
     private double[][] calculaMatPPost() {
         int columnas = this.matCanal[0].length;
         int filas = this.matCanal.length;
@@ -25,6 +35,10 @@ public class Canal {
         return matPaPost;
     }
 
+    /**
+     * Método que calcula las probabilidades de las salidas
+     * @return probabilidades de las salidas
+     */
     private double[] calculaProbB() {
         int columnas = this.matCanal[0].length;
         int filas = this.matCanal.length;
@@ -36,6 +50,11 @@ public class Canal {
         return probB;
     }
 
+    /**
+     * Método que realiza el cálculo de la equivocación de un canal
+     * @param entropiaPost: entropía a posteriori
+     * @return equivocación de un canal
+     */
     public double calculoEquivocacion(double[] entropiaPost) {
         double entropia = 0.;
         int i;
@@ -44,6 +63,10 @@ public class Canal {
         return entropia;
     }
 
+    /**
+     * Método que calcula la entropía de la salida conociendo la entrada a partir de la matriz de canal y las probabilidades de las entradas
+     * @return entropía de la salida conociendo la entrada
+     */
     public double entropiaBA() {
         double entropia = 0.;
         for (int i = 0; i < matCanal.length; i++) {
@@ -57,14 +80,29 @@ public class Canal {
         return entropia;
     }
 
+    /**
+     * Método que calcula la información mutua de un canal a partir de la resta entre la entropía de la entrada y la equivocación del canal
+     * @param equivocacion: equivocación del canal
+     * @return información mutua
+     */
     public double calculoInformacionMutuaAB(double equivocacion) {
         return this.calculoEntropiaAPriori() - equivocacion;
     }
 
+    /**
+     * Método que calcula la información mutua de un canal a partir de la resta entre la entropía de la salida y la entropía de la salida
+     * conociendo la entrada
+     * @param entropiaBA: entropía de la salida conociendo la entrada
+     * @return información mutua
+     */
     public double calculoInformacionMutuaBA(double entropiaBA) {
         return calculoEntropiaSalida() - entropiaBA;
     }
 
+    /**
+     * Método que calcula la información mutua de un canal a partir de las probabilidades de los sucesos simultáneos del canal
+     * @return información mutua
+     */
     public double calculoInformacionMutuaConSucesosSimultaneos() {
         double p, informacion = 0;
         int i, j;
@@ -77,6 +115,10 @@ public class Canal {
         return informacion;
     }
 
+    /**
+     * Método que calcula el valor para la entropía de la salida de un canal a partir de las probabilidades de salida
+     * @return entropía de la salida
+     */
     public double calculoEntropiaSalida() {
         double suma = 0, probabilidad;
         int i, elementos = this.probSalida.length;
@@ -87,6 +129,10 @@ public class Canal {
         return suma;
     }
 
+    /**
+     * Método que calcula la entropía a priori de un canal a partir de las probabilidades de entrada
+     * @return entropía a priori
+     */
     public double calculoEntropiaAPriori() {
         double suma = 0, probabilidad;
         int i, elementos = this.probEntrada.length;
@@ -97,6 +143,10 @@ public class Canal {
         return suma;
     }
 
+    /**
+     * Método que calcula la entropía a posteriori de un canal a partir de la matriz de probabilidades a posteriori
+     * @return entropía a postriori
+     */
     public double[] calculoEntropiaAPosteriori() {
         int fila = this.matPPost.length;
         int columna = this.matPPost[0].length;

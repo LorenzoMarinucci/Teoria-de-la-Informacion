@@ -33,7 +33,7 @@ public class Visualizador {
     
     public static void mostrarEntropiasAPosteriori(double[] entropias) {
     	for (int i = 0; i < entropias.length; i++) {
-            System.out.print(" A/B" + (i + 1) + "    ");
+            System.out.print("A/b=B" + (i + 1) + "   ");
         }
     	System.out.println("");
     	for (int i = 0; i < entropias.length; i++) {

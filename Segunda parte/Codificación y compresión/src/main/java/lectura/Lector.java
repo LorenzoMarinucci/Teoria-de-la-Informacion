@@ -8,6 +8,11 @@ import java.util.HashMap;
 
 public class Lector {
 
+	/**
+	 * Método que lee un mensaje de un archivo de texto
+	 * @param path: ubicación del archivo
+	 * @return mensaje
+	 */
     public static String leerArchivo(String path){
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
@@ -27,6 +32,11 @@ public class Lector {
         return null;
     }
 
+    /**
+     * Método que genera una distribución de probabilidades para cada símbolo de un mensaje a partir del mismo
+     * @param mensaje: mensaje a comprimir
+     * @return distribución de probabilidades del mensaje
+     */
     public static HashMap<Character,Float> generarDistribucion(String mensaje){
         HashMap<Character,Float> distribucion = new HashMap<Character, Float>();
         int N = 0;

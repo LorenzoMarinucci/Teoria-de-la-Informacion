@@ -2,6 +2,11 @@ package compresor;
 
 public class RLC {
     
+	/**
+	 * Método que comprime un mensaje por el método de RLC
+	 * @param mensaje: mensaje a comprimir
+	 * @return mensaje comprimido
+	 */
     public static String comprimir(String mensaje) {
         StringBuilder sb = new StringBuilder();
         Character actual = mensaje.charAt(0);

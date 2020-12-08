@@ -7,8 +7,10 @@ import java.util.Set;
 
 public class Shannon_Fano extends Compresor{
 	
-	/* 
-	 * El metodo genera el alfabeto codigo utilizando el algoritmo de Shannon-Fano de manera recursiva.
+	/**
+	 * El metodo genera el alfabeto codigo utilizando el algoritmo de Shannon-Fano de manera recursiva
+	 * @param probabilidades: distribución de probabilidades de una fuente
+	 * @return alfabeto código para una codificación de Shannon-Fano
 	 */
     public static HashMap<Character,String> generarAlfabetoCodigo(HashMap<Character,Float> probabilidades){
     	//Si la cantidad de elementos del hashMap probabilidades es igual a 2 se busca el de mayor probabilidad 
@@ -67,10 +69,15 @@ public class Shannon_Fano extends Compresor{
         }
     }
 
-    //Apartir del conjunto 1 generado anteriormente y de las probabilidades que dieron lugar a la creacion del conjunto 1,se arma
-    //el conjunto 2.
-    //Simplemente el metodo agrega en el conjunto 2 todos aquellos elementos del conjunto de probabilidades que no estan en el 
-    //conjunto 1.
+
+    /**
+     * Apartir del conjunto 1 generado anteriormente y de las probabilidades que dieron lugar a la creacion del conjunto 1,se arma el conjunto 2.
+     * Simplemente el metodo agrega en el conjunto 2 todos aquellos elementos del conjunto de probabilidades que no estan en el 
+     * conjunto 1.
+     * @param conjunto1: conjunto 1 generado
+     * @param probabilidades; distribución de probabilidades al momento
+     * @return conjunto 2
+     */
 	private static HashMap<Character, Float> generaConjunto2(HashMap<Character, Float> conjunto1, HashMap<Character,Float> probabilidades) {
 		HashMap<Character,Float> conjunto2 = new HashMap<Character,Float>();
 		Set<Character> simbolos = probabilidades.keySet();
@@ -81,12 +88,17 @@ public class Shannon_Fano extends Compresor{
 		return conjunto2;
 	}
 
-	//El metodo genera el conjunto 1.
-	//Los pasos que sigue para lograrlo son:
-	//1:Calcular el total de la suma de las probabilidades del conjunto de probabilidades.
-	//2:Se divide el total en 2 para tener una medida de cuando se deberia parar de agregar elementos al conjunto 1.
-	//3:Se recorre todo el conjunto de probabilidades de manera ordenada y para cada simbolo se calculan las probabilidades acumuladas,
-	//  las cuales determinan si se tiene una mejor diferencia al agregar un simbolo con su probabilidad al conjunto 1 o al conjunto 2.
+	/**
+	 * El metodo genera el conjunto 1.
+	 * Los pasos que sigue para lograrlo son:
+	 * 1:Calcular el total de la suma de las probabilidades del conjunto de probabilidades.
+	 * 2:Se divide el total en 2 para tener una medida de cuando se deberia parar de agregar elementos al conjunto 1.
+	 * 3:Se recorre todo el conjunto de probabilidades de manera ordenada y para cada simbolo se calculan las probabilidades acumuladas,
+	 * las cuales determinan si se tiene una mejor diferencia al agregar un simbolo con su probabilidad al conjunto 1 o al conjunto 2.
+	 * @param probabilidades: distribución de probabilidades al momento
+	 * @param simbolosOrdenados: simbolos ordenados
+	 * @return conjunto 1
+	 */
 	private static HashMap<Character, Float> generaConjunto1(HashMap<Character, Float> probabilidades,ArrayList<Character> simbolosOrdenados) {
 		HashMap<Character,Float> conjunto1 = new HashMap<Character,Float>();
 		Iterator<Character> itSimbolos = simbolosOrdenados.iterator();
@@ -111,7 +123,11 @@ public class Shannon_Fano extends Compresor{
 		return conjunto1;
 	}
 	
-  //El metodo ordena las probabilidades de mayor a menor y devuelve una lista de caracteres que reprensenta dicho orden. 
+	/**
+	 * El metodo ordena las probabilidades de mayor a menor y devuelve una lista de caracteres que reprensenta dicho orden
+	 * @param probabilidades: distribución de probabilidades
+	 * @return distribución de probabilidades ordenada
+	 */
 	public static ArrayList<Character> ordenarProbabilidades(HashMap<Character, Float> probabilidades) {
 		int tamanio = probabilidades.size();
 		Float maximo = (float) -1,probabilidad;

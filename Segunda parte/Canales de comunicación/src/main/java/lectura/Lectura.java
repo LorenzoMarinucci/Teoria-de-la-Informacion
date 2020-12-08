@@ -9,6 +9,12 @@ import calculos.Canal;
 
 public class Lectura {
 	
+	/**
+	 * Método que lee de un archivo de texto la cantidad de entradas y salidas de un canal, las probabilidades de las entradas y la
+	 * matriz de canal
+	 * @param path: ubicación del archivo de texto
+	 * @return instancia de canal, con los datos almacenados en él
+	 */
 	public static Canal leerDatos(String path) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));

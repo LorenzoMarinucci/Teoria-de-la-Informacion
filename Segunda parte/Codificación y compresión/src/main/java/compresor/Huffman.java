@@ -6,6 +6,11 @@ import java.util.Set;
 
 public class Huffman extends Compresor{
 
+	/**
+	 * Método que genera un alfabeto código para una fuente por el método de Huffman
+	 * @param probabilidades: distribución de probabilidades de una fuente
+	 * @return código para cada símbolo de la fuente
+	 */
     public static HashMap<Character,String> generarAlfabetoCodigo(HashMap<Character,Float> probabilidades){
 		if(probabilidades.size() == 2) {
 			HashMap<Character,String> codificacionH = new HashMap<Character,String>();
@@ -46,6 +51,11 @@ public class Huffman extends Compresor{
 	    }
 	}
 
+    /**
+     * Método que devuelve el simbolo con menor probabilidad hasta el momento
+     * @param probabilidades: distribución de probabilidades en un momento del método determinado
+     * @return caracter con menor probabilidad al momento
+     */
     private static Character getClaveMinimo(HashMap<Character,Float> probabilidades) {
     	Float minimaProb = (float) 1,probabilidad;
 		Character minimoChar = null;
